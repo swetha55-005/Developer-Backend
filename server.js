@@ -7,8 +7,9 @@ const IndexRouter = require('./routes/index')
 const app = express() 
 
 app.use(express.json());
+app.use(IndexRouter)
 
-mongoose.connect(process.env.MongoDBURI)
+mongoose.connect(process.env.MongoDB_URI)
 .then(()=>{ 
     console.log('MongoDB connected succesfully!');
 })
