@@ -9,6 +9,4 @@ router.get('/fetch-candidates', fetchCandidates)
 
 router.get('/fetch-candidate/:email', fetchCandidateByEmail)
 
-
-
-module.exports = router;
+module.exports = router; 

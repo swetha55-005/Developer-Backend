@@ -8,7 +8,7 @@ const app = express()
 
 app.use(express.json());
 
-mongoose.connect(process.env.MongoDBURI)
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{ 
     console.log('MongoDB connected succesfully!');
 })
