@@ -50,7 +50,7 @@ const fetchCandidates = async (req ,res) => {
            return res.json({success : "false" , message : "candidate not found"})
         }
 
-        return res.json({success : false , message : "candidate fetch successfully" , data : candidates})
+        return res.json({success : "true" , message : "candidate fetch successfully" , data : candidates})
 
     }
     catch(err){
@@ -62,15 +62,15 @@ const fetchCandidates = async (req ,res) => {
 const fetchCandidateByEmail = async (req ,res) => {
       try{
 
-        const email = req.params
+        const {email} = req.params
 
-        const candidate = await CandidateModel.findOne(email)
+      const candidate = await CandidateModel.findOne({ email })
 
         if(!candidate){
            return res.json({success : "false" , message : "candidate not found"})
         }
 
-        return res.json({success : false , message : "candidate fetch successfully" , data : candidate})
+        return res.json({success : "true" , message : "candidate fetch successfully" , data : candidate})
 
     }
     catch(err){
